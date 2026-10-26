@@ -5,6 +5,7 @@
 package com.mycompany.idojaraskliens.ui;
 
 import com.mycompany.idojaraskliens.model.Idojaras;
+import com.mycompany.idojaraskliens.service.IdojarasSzolgaltatas;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -29,8 +30,8 @@ public class IdojarasAblak extends JFrame implements IdojarasNezet {
     private final JLabel szelsebessegCimke;
     private final JLabel idopontCimke;
 
-    public IdojarasAblak(IdojarasVezerlo vezerlo) {
-        this.vezerlo = vezerlo;
+    public IdojarasAblak(IdojarasSzolgaltatas szolgaltatas) {
+        this.vezerlo = new IdojarasVezerlo(szolgaltatas, this);
 
         setTitle("Időjárás");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
